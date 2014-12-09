@@ -1,7 +1,7 @@
 DOCKER-VERSION 1.3
 
 FROM ubuntu:14.04
-MAINTAINER Sean Lindo <lindo.d.sean@runbox.com>
+MAINTAINER Sean Lindo <lindo.d.sean@gmail.com>
 
 # make sure apt is up to date
 RUN apt-get update
@@ -13,6 +13,7 @@ RUN apt-get install -y nodejs npm git git-core vim-tiny
 ADD default.json /tmp/
 
 EXPOSE 3000
+EXPOSE 6379
 
 # startup script
 ADD start.sh /tmp/
