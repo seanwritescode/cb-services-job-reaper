@@ -1,0 +1,16 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    fsalum-redis (1.0.2)
+      thias-sysctl (>= 0.3.0)
+    maestrodev-wget (1.5.6)
+    puppetlabs-stdlib (4.4.0)
+    thias-sysctl (1.0.0)
+    willdurand-nodejs (1.8.3)
+      maestrodev-wget (>= 1.2.0)
+      puppetlabs-stdlib (>= 3.2.1)
+
+DEPENDENCIES
+  fsalum-redis (>= 0)
+  willdurand-nodejs (>= 0)
+

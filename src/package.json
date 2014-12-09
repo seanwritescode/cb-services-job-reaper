@@ -1,0 +1,19 @@
+{
+ "name": "services",
+ "author": {
+   "name": "Sean Lindo"
+ },
+ "version": "1.0.0",
+ "dependencies": {
+   "kue": "0.8.9",
+   "mysql": "2.5.3",
+   "restler": "3.2.2",
+   "minimist" : "1.1.0",
+   "async" : "0.9.0",
+   "sequelize" : "git://github.com/sequelize/sequelize.git#master",
+   "config" : "1.9.0",
+   "object-assign" : "2.0.0",
+   "q" : "1.1.2"
+ },
+ "devDependencies": {}
+}
