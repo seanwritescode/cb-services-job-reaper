@@ -1,3 +1,5 @@
+process.env.NODE_CONFIG_DIR = "./config";
+
 var CompanyQueueJobSearchPagesWorker = require('./services/companyjobsearch-queue-service.js');
 var CompanyQueueWorker = require('./services/company-queue-worker-service.js');
 var ProcessJobsQueueWorker = require('./services/processjobs-queue-worker-service.js');

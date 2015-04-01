@@ -1,3 +1,5 @@
+process.env.NODE_CONFIG_DIR = "./config";
+
 var kue = require('kue');
 var CompanyRepo = require('./repositories/company-repo.js');
 var CompanyQueueService = require('./services/company-queue-service.js');
