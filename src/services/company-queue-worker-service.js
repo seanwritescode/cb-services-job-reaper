@@ -11,7 +11,7 @@ function CompanyQueueWorker() {
 CompanyQueueWorker.prototype.startWorker = function() {
   var self = this;
 
-  self._companyQueue.process('CompaniesToProcess', 5, function(job, done){
+  self._companyQueue.process('CompaniesToProcess', 3, function(job, done){
     self._cbAPI.getTotalJobResultPagesForCompany(job.data.identifier)
       .then(function(totalNumberOfPages) {
         return queueHelper.convertTotalPagesToQueueItems(job.data.identifier, totalNumberOfPages);

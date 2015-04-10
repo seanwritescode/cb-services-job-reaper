@@ -13,7 +13,7 @@ function ProcessJobsQueueWorker() {
 ProcessJobsQueueWorker.prototype.startWorker = function() {
   var self = this;
 
-  self._jobsQueue.process('JobsToProcess', 10, function(job, done) {
+  self._jobsQueue.process('JobsToProcess', 3, function(job, done) {
     self._cbAPI.foo(job.data.DID)
     .then(function(responseJob) {
       var Job = models.job;

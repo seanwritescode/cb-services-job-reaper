@@ -11,7 +11,7 @@ function CompanyJobSearchPagesQueueWorker() {
 CompanyJobSearchPagesQueueWorker.prototype.startWorker = function() {
   var self = this;
 
-  self._companyJobSearchPagesQueue.process('CompanyJobSearchPagesToProcess', 5, function(job, done) {
+  self._companyJobSearchPagesQueue.process('CompanyJobSearchPagesToProcess', 3, function(job, done) {
     self._cbAPI.getJobSearchResultsByPage(job.data.identifier, job.data.jobSearchPageNumber)
       .then(function(jobSearchResult) {
         return queueHelper.convertJobSearchResultsToQueueItems(jobSearchResult, job.data.identifier);
