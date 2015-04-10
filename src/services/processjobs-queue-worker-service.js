@@ -13,13 +13,14 @@ function ProcessJobsQueueWorker() {
 ProcessJobsQueueWorker.prototype.startWorker = function() {
   var self = this;
 
-  self._jobsQueue.process('JobsToProcess', 3, function(job, done) {
+  self._jobsQueue.process('JobsToProcess', 1, function(job, done) {
     self._cbAPI.foo(job.data.DID)
     .then(function(responseJob) {
       var Job = models.job;
       var jobObject = jobHelper.buildJobModel(job.data, responseJob);
       Job.upsert(jobObject)
         .catch(function(ex) {
+          console.log(ex);
           return done(new Error(ex));
         });
     })
@@ -27,6 +28,7 @@ ProcessJobsQueueWorker.prototype.startWorker = function() {
       done();
     })
     .catch(function(ex) {
+      console.log(ex);
       return done(new Error(ex));
     });
   });

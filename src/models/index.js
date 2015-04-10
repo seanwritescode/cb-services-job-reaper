@@ -3,8 +3,8 @@ var Config = require('config');
 
 var sequelize = new Sequelize(Config.get('Database.connectionString'), {
   dialect : 'mysql',
-  logging : false,
-  pool: { maxConnections: 50, maxIdleTime: 30},
+  logging : true,
+  pool: { maxConnections: 5, maxIdleTime: 30 },
 });
 
 // load models
